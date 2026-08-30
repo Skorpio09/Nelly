@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Nelly ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- 1. PASSCODE SCREEN -->
+    <div id="passcode-screen" class="screen active">
+      <div class="passcode-card">
+        <div class="pixel-heart">💖</div>
+
+        <div class="dots-container">
+          <div class="dot" id="dot-0"></div>
+          <div class="dot" id="dot-1"></div>
+          <div class="dot" id="dot-2"></div>
+          <div class="dot" id="dot-3"></div>
+        </div>
+
+        <div class="keypad">
+          <button class="key" onclick="pressKey('1')">1</button>
+          <button class="key" onclick="pressKey('2')">2</button>
+          <button class="key" onclick="pressKey('3')">3</button>
+          <button class="key" onclick="pressKey('4')">4</button>
+          <button class="key" onclick="pressKey('5')">5</button>
+          <button class="key" onclick="pressKey('6')">6</button>
+          <button class="key" onclick="pressKey('7')">7</button>
+          <button class="key" onclick="pressKey('8')">8</button>
+          <button class="key" onclick="pressKey('9')">9</button>
+          <button class="key action" onclick="clearKey()">C</button>
+          <button class="key" onclick="pressKey('0')">0</button>
+          <button class="key action" onclick="deleteKey()">⌫</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. MAIN CONTENT SCREEN -->
+    <div id="main-screen" class="screen">
+
+      <h2 class="section-title">solve our little picture ♡</h2>
+      <p class="subtitle">Натисни две плочки, за да ги размениш!</p>
+
+      <div class="puzzle-grid" id="puzzle-grid"></div>
+
+      <div class="scroll-hint" id="scroll-hint">
+        ↓ Скролни надолу, любима ♡
+      </div>
+
+      <!-- Secret Content -->
+      <div id="secret-content" style="display: none;">
+
+        <!-- Love Letter -->
+        <div class="letter-card">
+          <p>Скъпа Нели,</p>
+          <br>
+
+          <p>
+            Исках да отделя момент, за да ти напомня колко неимоверно
+            много те обичам. Дори когато ежедневието ни завърти,
+            ти винаги си в мислите и в сърцето ми.
+          </p>
+          <br>
+
+          <p>
+            Всеки ден, събуждайки се с мисълта за теб, прави света
+            толкова по-светъл. Носиш топлина и щастие, каквито никога
+            не бях изпитвал преди. Благодаря ти, че си себе си,
+            за прекрасната ти усмивка и за всеки един момент,
+            който споделяме.
+          </p>
+          <br>
+
+          <p>Обичам те безкрайно!</p>
+          <br>
+
+          <p>
+            Завинаги твоя love,<br>
+            <strong>Твоят любим</strong>
+          </p>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist-card">
+          <h3 class="section-title" style="font-size: 20px;">
+            our little playlist ♡
+          </h3>
+
+          <div class="songs-grid">
+
+            <div class="song-item">
+              <div class="song-cover">🎵</div>
+              <div class="song-info">
+                <div class="song-title">Please, Please, Please...</div>
+                <div class="song-artist">The Smiths</div>
+              </div>
+            </div>
+
+            <div class="song-item">
+              <div class="song-cover">🌸</div>
+              <div class="song-info">
+                <div class="song-title">
+                  do you think you could love me?
+                </div>
+                <div class="song-artist">yung kai</div>
+              </div>
+            </div>
+
+            <div class="song-item">
+              <div class="song-cover">❤️</div>
+              <div class="song-info">
+                <div class="song-title">The Woman I Love</div>
+                <div class="song-artist">Jason Mraz</div>
+              </div>
+            </div>
+
+            <div class="song-item">
+              <div class="song-cover">✨</div>
+              <div class="song-info">
+                <div class="song-title">You're Beautiful</div>
+                <div class="song-artist">James Blunt</div>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="counter-btn" onclick="showTimerScreen()">
+            every second with you ♡
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. TIMER SCREEN -->
+    <div id="timer-screen" class="screen">
+
+      <h2 class="section-title">every second with you ♡</h2>
+
+      <div class="timer-display">
+
+        <div class="time-unit">
+          <div class="time-value" id="days">0</div>
+          <div class="time-label">Дни</div>
+        </div>
+
+        <div class="time-unit">
+          <div class="time-value" id="hours">00</div>
+          <div class="time-label">Часа</div>
+        </div>
+
+        <div class="time-unit">
+          <div class="time-value" id="minutes">00</div>
+          <div class="time-label">Минути</div>
+        </div>
+
+        <div class="time-unit">
+          <div class="time-value" id="seconds">00</div>
+          <div class="time-label">Секунди</div>
+        </div>
+
+      </div>
+
+      <p class="subtitle">
+        Това е колко време те обичам и не съм съжалил за нито една секунда.
+      </p>
+
+      <button class="back-btn" onclick="showMainScreen()">
+        ← назад
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
