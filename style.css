@@ -1,0 +1,330 @@
+:root {
+  --bg-pink: #ffeef2;
+  --accent-pink: #ff85a2;
+  --deep-pink: #e65c82;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --text-color: #5c3d46;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-pink);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(#ffc2d1 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Screen Management */
+.screen {
+  display: none;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Passcode Screen */
+.passcode-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.pixel-heart {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #e0d0d5;
+  transition: background 0.2s;
+}
+
+.dot.filled {
+  background: var(--deep-pink);
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.key {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  margin: 0 auto;
+  transition: transform 0.1s, background 0.1s;
+}
+
+.key:active {
+  transform: scale(0.92);
+  background: #ffd0dc;
+}
+
+.key.action {
+  font-size: 16px;
+}
+
+/* Main Content Section */
+.section-title {
+  font-size: 24px;
+  font-family: 'Georgia', serif;
+  margin-bottom: 8px;
+  color: var(--deep-pink);
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* Puzzle Section */
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 20px;
+  padding: 8px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.1s;
+  background-size: 300px 300px;
+}
+
+.tile.selected {
+  border-color: var(--deep-pink);
+  transform: scale(0.95);
+}
+
+.scroll-hint {
+  margin-top: 15px;
+  font-size: 14px;
+  color: var(--deep-pink);
+  animation: bounce 2s infinite;
+  display: none;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-8px);
+  }
+
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Letter Section */
+.letter-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  margin: 40px 0;
+  text-align: left;
+  line-height: 1.7;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+}
+
+/* Playlist Section */
+.playlist-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  border-radius: 20px;
+  margin: 40px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.song-item {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.song-cover {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background: #ffb6c1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.song-info {
+  flex: 1;
+}
+
+.song-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.song-artist {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Counter Button & Timer */
+.counter-btn {
+  background: var(--deep-pink);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(230, 92, 130, 0.4);
+  margin: 20px 0;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.counter-btn:hover {
+  background: #d44d72;
+  transform: translateY(-2px);
+}
+
+.timer-display {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.time-unit {
+  background: white;
+  padding: 15px;
+  border-radius: 16px;
+  min-width: 75px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.time-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--deep-pink);
+}
+
+.time-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid var(--deep-pink);
+  color: var(--deep-pink);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
