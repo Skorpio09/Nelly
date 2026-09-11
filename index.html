@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Nelly ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="heart-field" aria-hidden="true"></div>
+
+  <div class="container">
+    
+    <!-- 1. PASSCODE SCREEN -->
+    <div id="passcode-screen" class="screen active">
+      <div class="passcode-card">
+        <div class="pixel-heart">💖</div>
+        <div class="dots-container">
+          <div class="dot" id="dot-0"></div>
+          <div class="dot" id="dot-1"></div>
+          <div class="dot" id="dot-2"></div>
+          <div class="dot" id="dot-3"></div>
+          <div class="dot" id="dot-4"></div>
+          <div class="dot" id="dot-5"></div>
+        </div>
+        <div class="keypad">
+          <button class="key" onclick="pressKey('1')">1</button>
+          <button class="key" onclick="pressKey('2')">2</button>
+          <button class="key" onclick="pressKey('3')">3</button>
+          <button class="key" onclick="pressKey('4')">4</button>
+          <button class="key" onclick="pressKey('5')">5</button>
+          <button class="key" onclick="pressKey('6')">6</button>
+          <button class="key" onclick="pressKey('7')">7</button>
+          <button class="key" onclick="pressKey('8')">8</button>
+          <button class="key" onclick="pressKey('9')">9</button>
+          <button class="key action" onclick="clearKey()">C</button>
+          <button class="key" onclick="pressKey('0')">0</button>
+          <button class="key action" onclick="deleteKey()">⌫</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. MAIN CONTENT SCREEN -->
+    <div id="main-screen" class="screen">
+      
+      <!-- Photo Puzzle -->
+      <h2 class="section-title">solve our little picture together ♡</h2>
+      <p class="subtitle">Tap two tiles to swap them and reveal our love story!</p>
+      
+      <div class="puzzle-grid" id="puzzle-grid"></div>
+      <div class="scroll-hint" id="scroll-hint">↓ Scroll down, my love ♡</div>
+
+      <!-- Secret Content -->
+      <div id="secret-content" style="display: none;">
+        
+        <!-- Love Letter -->
+        <div class="letter-card">
+          <p>My dearest Nelly,</p><br>
+          <p>There are moments in life that feel so simple, yet so profound, and loving you is one of those moments. You did not just enter my life—you changed it. You made my days softer, my nights warmer, and my heart fuller in ways I never thought possible.</p><br>
+          <p>Before you, I knew what ordinary felt like. But with you, everything became brighter, more meaningful, and more alive. Your smile has become my favorite place to rest, your laughter my favorite sound, and your presence my greatest comfort. You taught me that love is not only about grand moments, but about the quiet, beautiful, everyday miracles of being truly seen and deeply loved.</p><br>
+          <p>You changed my life in the kindest, most beautiful way. You gave me peace, happiness, hope, and a future I can finally imagine with you in it. I want to keep choosing you, every single day, in every season, through every chapter of life. I want your hand in mine, your heart beside mine, and your love in my future forever.</p><br>
+          <p>I love you more than words can fully say, and even more than I can ever explain. You are my home, my joy, my comfort, and the person I want to build my forever with.</p><br>
+          <p>Always yours,<br><strong>Your forever love</strong></p>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist-card">
+          <h3 class="section-title" style="font-size: 20px;">our little playlist ♡</h3>
+          <div class="songs-grid">
+            <div class="song-item">
+              <div class="song-cover">🎵</div>
+              <div class="song-info">
+                <div class="song-title">WDA</div>
+                <div class="song-artist">AESPA</div>
+              </div>
+            </div>
+            <div class="song-item">
+              <div class="song-cover">🌸</div>
+              <div class="song-info">
+                <div class="song-title">Thsis and That</div>
+                <div class="song-artist">Stray Kids</div>
+              </div>
+            </div>
+            <div class="song-item">
+              <div class="song-cover">❤️</div>
+              <div class="song-info">
+                <div class="song-title">I love you like a love song</div>
+                <div class="song-artist">Selena Gomez</div>
+              </div>
+            </div>
+            <div class="song-item">
+              <div class="song-cover">✨</div>
+              <div class="song-info">
+                <div class="song-title">REDRED</div>
+                <div class="song-artist">Cortis</div>
+              </div>
+            </div>
+          </div>
+          <button class="counter-btn" onclick="showTimerScreen()">every second with you ♡</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. TIMER SCREEN -->
+    <div id="timer-screen" class="screen">
+      <h2 class="section-title">every second with you ♡</h2>
+      <div class="timer-display">
+        <div class="time-unit">
+          <div class="time-value" id="days">0</div>
+          <div class="time-label">Days</div>
+        </div>
+        <div class="time-unit">
+          <div class="time-value" id="hours">00</div>
+          <div class="time-label">Hours</div>
+        </div>
+        <div class="time-unit">
+          <div class="time-value" id="minutes">00</div>
+          <div class="time-label">Minutes</div>
+        </div>
+        <div class="time-unit">
+          <div class="time-value" id="seconds">00</div>
+          <div class="time-label">Seconds</div>
+        </div>
+      </div>
+      <p class="subtitle">This is how long I have loved you, and I would choose you in every second of every day forever.</p>
+      <button class="back-btn" onclick="showMainScreen()">← back</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
